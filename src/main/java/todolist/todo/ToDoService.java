@@ -18,4 +18,8 @@ public class ToDoService {
 	public List<ToDo> getAllTodos(){
 		return todos;
 	}
+
+	public ToDo getTodo(Integer id) {
+		return todos.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+	}
 }
