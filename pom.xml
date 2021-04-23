@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>todolist</groupId>
+	<artifactId>todolist</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>todolist</name>
+	<description>crud opertaions</description>
+
+	<parent> <!-- it is to tell that this project is child of springboot -->
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.3</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+<!-- this dependency is to use all the web annoatations and much more -->
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+	</dependencies>
+
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+
+</project>
