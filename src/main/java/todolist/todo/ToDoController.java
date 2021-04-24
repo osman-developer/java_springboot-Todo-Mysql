@@ -12,22 +12,28 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ToDoController {
 
-	@Autowired //used for dependecy injection
+	@Autowired // used for dependecy injection
 	private ToDoService toDoService;
-	
+
 	@RequestMapping("/todos")
-	public List<ToDo> getAllToDos(){
+	public List<ToDo> getAllToDos() {
 		return toDoService.getAllTodos();
-		
+
 	}
-	
+
 	@RequestMapping("/todo/{id}")
 	public ToDo getToDo(@PathVariable Integer id) {
 		return toDoService.getTodo(id);
 	}
-	
-	@RequestMapping(method=RequestMethod.POST, value="/todo")
+
+	@RequestMapping(method = RequestMethod.POST, value = "/todo")
 	public void createToDo(@RequestBody ToDo todo) {
 		toDoService.createTodo(todo);
 	}
+
+	@RequestMapping(method = RequestMethod.PUT, value = "/todo/{id}")
+	public void updateToDo(@RequestBody ToDo todo, @PathVariable Integer id) {
+		toDoService.updateTodo(todo);
+	}
+
 }

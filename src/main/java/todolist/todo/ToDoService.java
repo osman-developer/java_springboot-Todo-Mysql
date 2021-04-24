@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 @Service
 public class ToDoService {
@@ -25,5 +26,13 @@ public class ToDoService {
 
 	public void createTodo(ToDo todo) {
 		todos.add(todo);
+	}
+
+	public void updateTodo(ToDo todo) {
+	
+		for(int i=0 ; i< todos.size(); i++) {
+			ToDo t = todos.get(i);
+			if(t.getId().equals(todo.getId()))
+		}
 	}
 }
