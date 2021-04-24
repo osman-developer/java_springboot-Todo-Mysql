@@ -22,4 +22,8 @@ public class ToDoService {
 	public ToDo getTodo(Integer id) {
 		return todos.stream().filter(t -> t.getId().equals(id)).findFirst().get();
 	}
+
+	public void createTodo(ToDo todo) {
+		todos.add(todo);
+	}
 }
