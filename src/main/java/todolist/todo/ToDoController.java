@@ -35,5 +35,10 @@ public class ToDoController {
 	public void updateTodo(@RequestBody ToDo todo, @PathVariable Integer id) {
 		toDoService.updateTodo(todo, id);
 	}
-
+	
+	@RequestMapping(method = RequestMethod.PUT, value = "/todo/{id}")
+	public void deleteTodo(@PathVariable Integer id) {
+		toDoService.deleteTodo(id);
+		
+	}
 }
