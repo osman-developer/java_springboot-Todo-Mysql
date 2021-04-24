@@ -1,5 +1,5 @@
 package todolist.todo;
 
-public class ToDoRepository {
+public interface ToDoRepository {
 
 }
