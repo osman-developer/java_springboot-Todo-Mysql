@@ -32,8 +32,8 @@ public class ToDoController {
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/todo/{id}")
-	public void updateToDo(@RequestBody ToDo todo, @PathVariable Integer id) {
-		toDoService.updateTodo(todo);
+	public void updateTodo(@RequestBody ToDo todo, @PathVariable Integer id) {
+		toDoService.updateTodo(todo, id);
 	}
 
 }

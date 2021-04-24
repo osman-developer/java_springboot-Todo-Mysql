@@ -10,13 +10,10 @@ import java.util.Iterator;
 
 @Service
 public class ToDoService {
-	private List<ToDo> todos = new ArrayList<>(Arrays.asList(
-			new ToDo(1, "task1", "summary1", "descript1"),
-			new ToDo(2, "task2", "summary2", "descript2")
-			)
-		);
-	
-	public List<ToDo> getAllTodos(){
+	private List<ToDo> todos = new ArrayList<>(Arrays.asList(new ToDo(1, "task1", "summary1", "descript1"),
+			new ToDo(2, "task2", "summary2", "descript2")));
+
+	public List<ToDo> getAllTodos() {
 		return todos;
 	}
 
@@ -28,11 +25,14 @@ public class ToDoService {
 		todos.add(todo);
 	}
 
-	public void updateTodo(ToDo todo) {
-	
-		for(int i=0 ; i< todos.size(); i++) {
+	public void updateTodo(ToDo todo, Integer id) {
+
+		for (int i = 0; i < todos.size(); i++) {
 			ToDo t = todos.get(i);
-			if(t.getId().equals(todo.getId()))
+			if (t.getId().equals(id)) {
+				todos.set(i, todo);
+				return;
+			}
 		}
 	}
 }
