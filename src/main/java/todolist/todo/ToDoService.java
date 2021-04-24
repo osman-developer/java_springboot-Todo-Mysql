@@ -37,7 +37,6 @@ public class ToDoService {
 	}
 
 	public void deleteTodo(Integer id) {
-		
-		
+		todos.removeIf(t -> t.getId().equals(id));
 	}
 }
