@@ -2,8 +2,10 @@ package todolist.todo;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="todo")//to map the todo to the db table 
 public class ToDo {
 	//it tells that the id is the primary in repos
 	@Id
