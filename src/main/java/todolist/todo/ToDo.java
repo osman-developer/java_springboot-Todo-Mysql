@@ -1,6 +1,10 @@
 package todolist.todo;
 
+import javax.persistence.Id;
+
 public class ToDo {
+	//it tells that the id is the primary in repos
+	@Id
 	Integer id;
 	String name;
 	String summary;
