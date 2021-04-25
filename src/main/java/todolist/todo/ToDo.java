@@ -13,17 +13,27 @@ public class ToDo {
 	String name;
 	String summary;
 	String description;
+	String author;
 
 	public ToDo() {
 
 	}
 
-	public ToDo(Integer id, String name, String summary, String description) {
+	public ToDo(Integer id, String name, String summary, String description,String author) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.summary = summary;
 		this.description = description;
+		this.author=author;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public Integer getId() {
