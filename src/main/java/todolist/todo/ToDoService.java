@@ -15,26 +15,21 @@ public class ToDoService {
 	private ToDoRepository toDoRepository;
 
 	public List<ToDo> getAllTodos() {
+		List<ToDo> todos = new ArrayList<>();
+		toDoRepository.findAll().forEach(todos::add);
 		return todos;
 	}
 
 	public ToDo getTodo(Integer id) {
-		return todos.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+		return toDoRepository.findById(id).orElse(null);
 	}
 
 	public void createTodo(ToDo todo) {
-		todos.add(todo);
+		toDoRepository.save(todo);
 	}
 
 	public void updateTodo(ToDo todo, Integer id) {
-
-		for (int i = 0; i < todos.size(); i++) {
-			ToDo t = todos.get(i);
-			if (t.getId().equals(id)) {
-				todos.set(i, todo);
-				return;
-			}
-		}
+		toDoRepository.save(todo);
 	}
 
 	public void deleteTodo(Integer id) {
