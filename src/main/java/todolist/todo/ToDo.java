@@ -1,7 +1,9 @@
 package todolist.todo;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class ToDo {
 	//it tells that the id is the primary in repos
 	@Id
