@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
 
 @Service
 public class ToDoService {
@@ -33,6 +31,6 @@ public class ToDoService {
 	}
 
 	public void deleteTodo(Integer id) {
-		todos.removeIf(t -> t.getId().equals(id));
+		toDoRepository.deleteById(id);
 	}
 }
